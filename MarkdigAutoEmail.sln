@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkdigAutoEmail", "MarkdigAutoEmail\MarkdigAutoEmail.csproj", "{C260CC14-5469-4703-B4EB-D52EF1CDE7E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkdigAutoEmail.Test", "MarkdigAutoEmail.Test\MarkdigAutoEmail.Test.csproj", "{869F4844-7E33-47AA-8C43-FE78A7EE9A07}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C260CC14-5469-4703-B4EB-D52EF1CDE7E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C260CC14-5469-4703-B4EB-D52EF1CDE7E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C260CC14-5469-4703-B4EB-D52EF1CDE7E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C260CC14-5469-4703-B4EB-D52EF1CDE7E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{869F4844-7E33-47AA-8C43-FE78A7EE9A07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{869F4844-7E33-47AA-8C43-FE78A7EE9A07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{869F4844-7E33-47AA-8C43-FE78A7EE9A07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{869F4844-7E33-47AA-8C43-FE78A7EE9A07}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
