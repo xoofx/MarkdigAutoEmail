@@ -13,7 +13,7 @@ namespace MarkdigAutoEmail.Test
         [InlineData("Please ask **someone@example.com**", @"<p>Please ask <strong><a href=""mailto:someone@example.com"">someone@example.com</a></strong></p>")]
         [InlineData("someone@example.com is the person to get in touch with", @"<p><a href=""mailto:someone@example.com"">someone@example.com</a> is the person to get in touch with</p>")]
         [InlineData(@"Leave <a href=""mailto:foo@example.com"">foo@example.com</a> existing  links alone", @"<p>Leave <a href=""mailto:foo@example.com"">foo@example.com</a> existing  links alone</p>")]
-        [InlineData("Send an email to someonee@example.com", @"<p>Send an email to <a href=""mailto:someone@example.com"">someone.else@example.com</a></p>")]
+        [InlineData("Send an email to someone@example.com", @"<p>Send an email to <a href=""mailto:someone@example.com"">someone@example.com</a></p>")]
         public void ShouldAutoLinkEmailOnStart(string markdown, string expectedHtml)
         {
             var markdownPipeline = new MarkdownPipelineBuilder()

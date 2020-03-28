@@ -54,6 +54,18 @@ namespace MarkdigAutoEmail
         {
             ValidPreviousCharacters = validPreviousCharacters;
 
+            // Ugly / Can't work with if email starts with any word char unicode
+            var openingChars = new List<char>();
+            for (int i = 'a'; i <= 'z'; i++)
+                openingChars.Add((char)i);
+            for (int i = 'A'; i <= 'Z'; i++)
+                openingChars.Add((char)i);
+            for (int i = '0'; i <= '9'; i++)
+                openingChars.Add((char)i);
+            openingChars.Add('<');
+
+            OpeningCharacters = openingChars.ToArray();
+
             _listOfCharCache = new ListOfCharCache();
         }
 
@@ -89,9 +101,20 @@ namespace MarkdigAutoEmail
                     return false;
                 }
 
+                // Remove <...>
+                if (slice.CurrentChar == '<')
+                {
+                    if (slice[match.Length] != '>')
+                    {
+                        return false;
+                    }
+                    // Remove trailing >
+                    slice.Start++;
+                }
+                
                 var email = match.Groups[1].Value;
-                slice.Start += email.Length;
-
+                slice.Start += match.Length;
+                
                 var inline = new LinkInline()
                 {
                     Span =
@@ -112,7 +135,7 @@ namespace MarkdigAutoEmail
                     Span = inline.Span,
                     Line = line,
                     Column = column,
-                    Content = new StringSlice(slice.Text, startPosition, startPosition + email.Length - 1),
+                    Content = new StringSlice(email),
                     IsClosed = true
                 });
                 processor.Inline = inline;
